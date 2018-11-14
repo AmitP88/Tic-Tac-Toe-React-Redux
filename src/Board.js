@@ -20,14 +20,17 @@ class Board extends Component {
     }
 
     handleChoice(event) {
+        const disableChoice = () => document.getElementById("choice-question").style.display = "none";
         if(event.target.innerHTML === X){
             this.setState({
                 choice: X
-            }, () => console.log(this.state.choice));
+            });
+            disableChoice(); 
         } else if(event.target.innerHTML === O){
             this.setState({
                 choice: O
-            }, () => console.log(this.state.choice));
+            });
+            disableChoice();
         }
     }
 
@@ -42,13 +45,14 @@ class Board extends Component {
     render() {
         return (
             <div className="container">
-                <h3 className="choice">
+                <h3 id="choice-question">
                     Play as 
                     <span onClick={this.handleChoice}>{X}</span>
                     or
                     <span onClick={this.handleChoice}>{O}</span>
                     ?
                 </h3>
+                <h3>You are : {this.state.choice}</h3>
                 <div className="board-container">
                     <div className="row">
                         <div className="cell" id="cell-1" onClick={this.handleOnClick}>{this.state.board[0][0]}</div>
