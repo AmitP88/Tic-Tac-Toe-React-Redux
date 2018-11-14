@@ -7,11 +7,12 @@ class Board extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            choice: '',
+            player: '',
+            computer: '',
             board: [
-                ['','',''],
-                ['','',''],
-                ['','','']
+                '','','',
+                '','','',
+                '','',''
             ]
         }
 
@@ -23,12 +24,14 @@ class Board extends Component {
         const disableChoice = () => document.getElementById("choice-question").style.display = "none";
         if(event.target.innerHTML === X){
             this.setState({
-                choice: X
+                player: X,
+                computer: O
             });
             disableChoice(); 
         } else if(event.target.innerHTML === O){
             this.setState({
-                choice: O
+                player: O,
+                computer: X
             });
             disableChoice();
         }
@@ -36,7 +39,7 @@ class Board extends Component {
 
     handleOnClick(event) {
         if(event.target.innerHTML === ''){
-            event.target.innerHTML = this.state.choice;
+            event.target.innerHTML = this.state.player;
         }
 
         console.log(event.target.innerHTML);
@@ -52,22 +55,22 @@ class Board extends Component {
                     <span onClick={this.handleChoice}>{O}</span>
                     ?
                 </h3>
-                <h3>You are : {this.state.choice}</h3>
+                <h3>You are : {this.state.player}</h3>
                 <div className="board-container">
                     <div className="row">
-                        <div className="cell" id="cell-1" onClick={this.handleOnClick}>{this.state.board[0][0]}</div>
-                        <div className="cell" id="cell-2" onClick={this.handleOnClick}>{this.state.board[0][1]}</div>
-                        <div className="cell" id="cell-3" onClick={this.handleOnClick}>{this.state.board[0][2]}</div>
+                        <div className="cell" id="cell-1" onClick={this.handleOnClick}>{this.state.board[0]}</div>
+                        <div className="cell" id="cell-2" onClick={this.handleOnClick}>{this.state.board[1]}</div>
+                        <div className="cell" id="cell-3" onClick={this.handleOnClick}>{this.state.board[2]}</div>
                     </div>
                     <div className="row">
-                        <div className="cell" id="cell-4" onClick={this.handleOnClick}>{this.state.board[1][0]}</div>
-                        <div className="cell" id="cell-5" onClick={this.handleOnClick}>{this.state.board[1][1]}</div>
-                        <div className="cell" id="cell-6" onClick={this.handleOnClick}>{this.state.board[1][2]}</div>
+                        <div className="cell" id="cell-4" onClick={this.handleOnClick}>{this.state.board[3]}</div>
+                        <div className="cell" id="cell-5" onClick={this.handleOnClick}>{this.state.board[4]}</div>
+                        <div className="cell" id="cell-6" onClick={this.handleOnClick}>{this.state.board[5]}</div>
                     </div>
                     <div className="row">
-                        <div className="cell" id="cell-7" onClick={this.handleOnClick}>{this.state.board[2][0]}</div>
-                        <div className="cell" id="cell-8" onClick={this.handleOnClick}>{this.state.board[2][1]}</div>
-                        <div className="cell" id="cell-9" onClick={this.handleOnClick}>{this.state.board[2][2]}</div>
+                        <div className="cell" id="cell-7" onClick={this.handleOnClick}>{this.state.board[6]}</div>
+                        <div className="cell" id="cell-8" onClick={this.handleOnClick}>{this.state.board[7]}</div>
+                        <div className="cell" id="cell-9" onClick={this.handleOnClick}>{this.state.board[8]}</div>
                     </div>
                 </div>            
             </div>
