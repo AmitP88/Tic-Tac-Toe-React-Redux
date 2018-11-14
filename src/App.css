@@ -20,3 +20,19 @@
   font-size: 70px;
   border: solid 2px black;
 }
+
+.cell:hover {
+  background-color: blueviolet;  
+}
+
+span {
+  border: solid 1px black;
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+span:hover {
+  cursor: pointer;
+  background-color: darkturquoise;
+}
