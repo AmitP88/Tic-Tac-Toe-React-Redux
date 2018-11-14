@@ -8,9 +8,9 @@ class Board extends Component {
         super(props);
         this.state = {
             board: [
-                [X,O,X],
-                [O,X,O],
-                [X,O,X]
+                ['','',''],
+                ['','',''],
+                ['','','']
             ]
         }
     }
