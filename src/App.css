@@ -3,11 +3,9 @@
 }
 
 .board-container {
-  background-color: darkslateblue;
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 310px;
   margin: 0 auto;
-  border-radius: 25px;
   display: grid;
 }
 
@@ -17,6 +15,8 @@
 }
 
 .cell {
-  padding: 40px;
-  font-size: 40px;
+  width: 100px;
+  height: 100px;
+  font-size: 70px;
+  border: solid 2px black;
 }
