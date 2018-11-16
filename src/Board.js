@@ -110,7 +110,7 @@ class Board extends Component {
                 </div>
 
                 <div className="board-container">
-                    <h3>You are : {this.state.player}</h3>                
+                    <h3 className="choice-statement">You are {this.state.player}</h3>                
                     <div className="row">
                         <div className="cell" id="cell-1" onClick={this.handleOnClick}>{this.state.board[0]}</div>
                         <div className="cell" id="cell-2" onClick={this.handleOnClick}>{this.state.board[1]}</div>

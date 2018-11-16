@@ -9,6 +9,10 @@
   margin: 0 auto;  
 }
 
+h3 {
+  font-size: 25px;
+}
+
 .choice-question {
   position: relative;
   top: 35%;
