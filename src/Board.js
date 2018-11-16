@@ -39,10 +39,58 @@ class Board extends Component {
 
     handleOnClick(event) {
         if(event.target.innerHTML === ''){
-            event.target.innerHTML = this.state.player;
+            switch(event.target.id){
+                case "cell-1":
+                    this.setState({
+                        board: [...this.state.board.slice(0,0), this.state.player, ...this.state.board.slice(0 + 1)]
+                    }, () => console.log(this.state.board));
+                    break;
+                case "cell-2":
+                    this.setState({
+                        board: [...this.state.board.slice(0,1), this.state.player, ...this.state.board.slice(1 + 1)]
+                    }, () => console.log(this.state.board));
+                    break;
+                case "cell-3":
+                    this.setState({
+                        board: [...this.state.board.slice(0,2), this.state.player, ...this.state.board.slice(2 + 1)]
+                    }, () => console.log(this.state.board));
+                    break;
+                case "cell-4":
+                    this.setState({
+                        board: [...this.state.board.slice(0,3), this.state.player, ...this.state.board.slice(3 + 1)]
+                    }, () => console.log(this.state.board));
+                    break;
+                case "cell-5":
+                    this.setState({
+                        board: [...this.state.board.slice(0,4), this.state.player, ...this.state.board.slice(4 + 1)]
+                    }, () => console.log(this.state.board));
+                    break;
+                case "cell-6":
+                    this.setState({
+                        board: [...this.state.board.slice(0,5), this.state.player, ...this.state.board.slice(5 + 1)]
+                    }, () => console.log(this.state.board));
+                    break;
+                case "cell-7":
+                    this.setState({
+                        board: [...this.state.board.slice(0,6), this.state.player, ...this.state.board.slice(6 + 1)]
+                    }, () => console.log(this.state.board));
+                    break;
+                case "cell-8":
+                    this.setState({
+                        board: [...this.state.board.slice(0,7), this.state.player, ...this.state.board.slice(7 + 1)]
+                    }, () => console.log(this.state.board));
+                    break;
+                case "cell-9":
+                    this.setState({
+                        board: [...this.state.board.slice(0,8), this.state.player, ...this.state.board.slice(8 + 1)]
+                    }, () => console.log(this.state.board));
+                    break;
+                default:
+                    console.log('');
+                    break;
+            }
         }
 
-        console.log(event.target.innerHTML);
     }
 
     render() {
