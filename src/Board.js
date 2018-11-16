@@ -1,23 +1,31 @@
 import React, { Component } from 'react';
 
+const initialState = {
+    player: '',
+    computer: '',
+    board: [
+        '','','',
+        '','','',
+        '','',''
+    ]    
+}
 const X = ' X ';
 const O = ' O ';
 
 class Board extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            player: '',
-            computer: '',
-            board: [
-                '','','',
-                '','','',
-                '','',''
-            ]
-        }
+        this.state = initialState;
 
+        this.handleReset = this.handleReset.bind(this);
         this.handleChoice = this.handleChoice.bind(this);
         this.handleOnClick = this.handleOnClick.bind(this);
+    }
+
+    handleReset() {
+        const enableChoice = () => document.getElementById("choice-question").style.display = "initial";        
+        this.setState(initialState, () => console.log(this.state));
+        enableChoice();
     }
 
     handleChoice(event) {
@@ -120,7 +128,8 @@ class Board extends Component {
                         <div className="cell" id="cell-8" onClick={this.handleOnClick}>{this.state.board[7]}</div>
                         <div className="cell" id="cell-9" onClick={this.handleOnClick}>{this.state.board[8]}</div>
                     </div>
-                </div>            
+                </div>
+                <span onClick={this.handleReset}>Reset</span>         
             </div>
 
         );
