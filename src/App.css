@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+.choice-container {
+  width: 310px;
+  height: 310px;
+  border: solid 2px black;
+  margin: 0 auto;  
+}
+
+.choice-question {
+  position: relative;
+  top: 35%;
+}
+
 .board-container {
   width: 350px;
   height: 310px;
@@ -36,4 +48,10 @@ span {
 span:hover {
   cursor: pointer;
   background-color: darkturquoise;
+}
+
+.resetButton {
+  width: 50px;
+  margin: 0 auto;
+  margin-top: 25px;
 }

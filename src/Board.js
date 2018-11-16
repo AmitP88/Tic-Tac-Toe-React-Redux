@@ -23,25 +23,20 @@ class Board extends Component {
     }
 
     handleReset() {
-        const enableChoice = () => document.getElementById("choice-question").style.display = "initial";        
         this.setState(initialState, () => console.log(this.state));
-        enableChoice();
     }
 
     handleChoice(event) {
-        const disableChoice = () => document.getElementById("choice-question").style.display = "none";
         if(event.target.innerHTML === X){
             this.setState({
                 player: X,
                 computer: O
             });
-            disableChoice(); 
         } else if(event.target.innerHTML === O){
             this.setState({
                 player: O,
                 computer: X
             });
-            disableChoice();
         }
     }
 
@@ -104,15 +99,18 @@ class Board extends Component {
     render() {
         return (
             <div className="container">
-                <h3 id="choice-question">
-                    Play as 
-                    <span onClick={this.handleChoice}>{X}</span>
-                    or
-                    <span onClick={this.handleChoice}>{O}</span>
-                    ?
-                </h3>
-                <h3>You are : {this.state.player}</h3>
+                <div className="choice-container">
+                    <h3 className="choice-question">
+                        Play as 
+                        <span onClick={this.handleChoice}>{X}</span>
+                        or
+                        <span onClick={this.handleChoice}>{O}</span>
+                        ?
+                    </h3>                
+                </div>
+
                 <div className="board-container">
+                    <h3>You are : {this.state.player}</h3>                
                     <div className="row">
                         <div className="cell" id="cell-1" onClick={this.handleOnClick}>{this.state.board[0]}</div>
                         <div className="cell" id="cell-2" onClick={this.handleOnClick}>{this.state.board[1]}</div>
@@ -128,8 +126,8 @@ class Board extends Component {
                         <div className="cell" id="cell-8" onClick={this.handleOnClick}>{this.state.board[7]}</div>
                         <div className="cell" id="cell-9" onClick={this.handleOnClick}>{this.state.board[8]}</div>
                     </div>
+                    <span className="resetButton" onClick={this.handleReset}>Reset</span>                             
                 </div>
-                <span onClick={this.handleReset}>Reset</span>         
             </div>
 
         );
