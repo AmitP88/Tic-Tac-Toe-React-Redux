@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.choice-container {
+.choice-container, .winner-container {
   width: 310px;
   height: 310px;
   border: solid 2px black;
@@ -11,6 +11,10 @@
 
 h3 {
   font-size: 25px;
+}
+
+.winner {
+  margin-top: 35%;
 }
 
 .choice-question {
@@ -57,5 +61,4 @@ span:hover {
 .resetButton {
   width: 50px;
   margin: 0 auto;
-  margin-top: 25px;
 }
