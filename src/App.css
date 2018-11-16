@@ -48,7 +48,7 @@ h3 {
 
 span {
   border: solid 1px black;
-  padding: 5px;
+  padding: 5px 15px 5px 15px;
   margin-left: 5px;
   margin-right: 5px;
 }
