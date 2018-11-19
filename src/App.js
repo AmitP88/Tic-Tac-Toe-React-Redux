@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import Board from './Board';
+
 import './App.css';
-import ChoiceQuestion from './ChoiceQuestion';
-import ChoiceAnswer from './ChoiceAnswer';
-import Winner from './Winner';
+import ChoiceQuestion from './components/ChoiceQuestion';
+import ChoiceAnswer from './components/ChoiceAnswer';
+import Winner from './components/Winner';
+import Board from './components/Board';
 
 class App extends Component {
   render() {
