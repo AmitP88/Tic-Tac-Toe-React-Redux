@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-const ChoiceAnswer = () => {
-    return (
-        <h3 className="choice-statement">You are </h3>
-    );
+import store from '../store/store';
+
+export class ChoiceAnswer extends Component {
+    render() {
+        console.log(this.props.player);        
+        return (
+            <h3 className="choice-statement">You are {this.props.player}</h3>
+        );        
+    }
 }
 
-export default ChoiceAnswer;
+const mapStateToProps = (state) => {
+    console.log(state);
+    return {
+        player: state.player
+    };
+}
+
+export default connect(mapStateToProps)(ChoiceAnswer);
