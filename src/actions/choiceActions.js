@@ -1,9 +1,9 @@
 import { X, O } from '../store/store';
 
-const PLAYER_X = "PLAYER_X";
-const PLAYER_O = "PLAYER_O";
+export const PLAYER_X = "PLAYER_X";
+export const PLAYER_O = "PLAYER_O";
 
-// Action creators for ChoiceQuestion component
+// Action creators for choiceReducer
 export const choosePlayerX = () => {
     return {
         type: PLAYER_X,

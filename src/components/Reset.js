@@ -6,7 +6,7 @@ const Reset = () => {
     }
 
     return (
-        <span className="resetButton" onClick={handleReset}>Reset</span>
+        <button className="resetButton" onClick={handleReset}>Reset</button>
     );
 }
 

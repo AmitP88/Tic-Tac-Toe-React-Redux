@@ -70,6 +70,7 @@ button:hover {
 }
 
 .resetButton {
-  width: 50px;
+  width: 80px;
   margin: 0 auto;
+  font-size: 15px;
 }
