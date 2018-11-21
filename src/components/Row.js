@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Cell from './Cell';
 
-const Row = () => {
-    return (
-        <div className="row">
-            <Cell></Cell>
-            <Cell></Cell>
-            <Cell></Cell>
-        </div>
-    );
+class Row extends Component {
+    render() {
+        return (
+            <div className="row">
+                <Cell></Cell>
+                <Cell></Cell>
+                <Cell></Cell>
+            </div>
+        );        
+    }
 }
 
 export default Row;

@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Row from './Row';
 
 
-const Board = () => {
-    return (
-        <div className="board-container">              
-            <Row></Row>
-            <Row></Row>
-            <Row></Row>
-        </div>
-    );
+class Board extends Component {
+    render() {
+        return (
+            <div className="board-container">              
+                <Row></Row>
+                <Row></Row>
+                <Row></Row>
+            </div>
+        );        
+    }
 }
 
 export default Board;
