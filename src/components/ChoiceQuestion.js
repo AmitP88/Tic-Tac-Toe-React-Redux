@@ -11,8 +11,12 @@ class ChoiceQuestion extends Component {
     handleChoice(e) {
         if(e.target.id === X){
             store.dispatch(choosePlayerX());
+            document.getElementById('X').disabled = true;
+            document.getElementById('O').disabled = true;
         } else if(e.target.id === O){
             store.dispatch(choosePlayerO());
+            document.getElementById('X').disabled = true;
+            document.getElementById('O').disabled = true;
         }
     }
 
