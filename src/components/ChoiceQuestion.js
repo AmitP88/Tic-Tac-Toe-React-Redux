@@ -21,9 +21,9 @@ class ChoiceQuestion extends Component {
             <div className="choice-container">
                 <h3 className="choice-question">
                     Play as 
-                    <span id={X} onClick={this.handleChoice}>X</span>
+                    <button id={X} onClick={this.handleChoice}>X</button>
                     or
-                    <span id={O} onClick={this.handleChoice}>O</span>
+                    <button id={O} onClick={this.handleChoice}>O</button>
                     ?
                 </h3>                
             </div>

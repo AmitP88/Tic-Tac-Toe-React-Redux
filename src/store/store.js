@@ -6,7 +6,12 @@ export const O = 'O';
 
 export const initialState = {
     player: '',
-    computer: ''
+    computer: '',
+    board: [
+        '', '', '',
+        '', '', '',
+        '', '', ''
+    ]
 }
 
 export const store = createStore(choiceReducer, initialState);
