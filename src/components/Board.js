@@ -1,16 +1,26 @@
 import React, { Component } from 'react';
-import Row from './Row';
-
 
 class Board extends Component {
     render() {
         return (
             <div className="board-container">              
-                <Row></Row>
-                <Row></Row>
-                <Row></Row>
+                <div className="row">
+                    <div className="cell"></div>
+                    <div className="cell"></div>
+                    <div className="cell"></div>
+                </div>
+                <div className="row">
+                    <div className="cell"></div>
+                    <div className="cell"></div>
+                    <div className="cell"></div>
+                </div>
+                <div className="row">
+                    <div className="cell"></div>
+                    <div className="cell"></div>
+                    <div className="cell"></div>
+                </div>
             </div>
-        );        
+        );
     }
 }
 
