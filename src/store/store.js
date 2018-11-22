@@ -1,12 +1,15 @@
 import { createStore } from 'redux';
 import choiceReducer from '../reducers/choiceReducer';
+import playersMoveReducer from '../reducers/playersMoveReducer';
 
 export const X = 'X';
 export const O = 'O';
 
 export const initialState = {
-    player: '',
-    computer: '',
+    choices: {
+        player: '',
+        computer: ''        
+    },
     board: [
         '', '', '',
         '', '', '',
@@ -14,10 +17,8 @@ export const initialState = {
     ]
 }
 
-export const store = createStore(choiceReducer, initialState);
+export const store = createStore(choiceReducer);
 
-store.subscribe(() => {
-    console.log("Store is now", store.getState());
-});
+store.subscribe(() => store.getState());
 
 export default store;

@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 
 export class ChoiceAnswer extends Component {
     render() {
-        console.log(this.props.player);        
+        console.log(this.props.choices.player);        
         return (
-            <h3 className="choice-statement">You are {this.props.player}</h3>
+            <h3 className="choice-statement">You are {this.props.choices.player}</h3>
         );
     }
 }
@@ -13,7 +13,9 @@ export class ChoiceAnswer extends Component {
 const mapStateToProps = (state) => {
     console.log(state);
     return {
-        player: state.player
+        choices: {
+            player: state.player
+        }
     };
 }
 
