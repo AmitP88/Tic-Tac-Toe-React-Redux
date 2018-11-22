@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
     console.log(state);
     return {
         choices: {
-            player: state.player
+            player: state.choices.player
         }
     };
 }
