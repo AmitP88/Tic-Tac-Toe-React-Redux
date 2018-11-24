@@ -11,7 +11,7 @@ import {
 } from '../actions/playerActions';
 import { initialState } from '../store/store';
 
-const playersMoveReducer = (state = initialState.board, action) => {   
+const playersMoveReducer = (state = initialState, action) => {   
     switch(action.type) {
         case PLAYER_CHOOSES_CELL_1:
             return ({
