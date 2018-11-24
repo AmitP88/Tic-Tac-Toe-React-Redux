@@ -52,19 +52,19 @@ export class Board extends Component {
         return (
             <div className="board-container">              
                 <div className="row">
-                    <div className="cell" id="cell-1" onClick={this.handleCellClick}>{this.props.board}</div>
-                    <div className="cell" id="cell-2" onClick={this.handleCellClick}>{this.props.board}</div>
-                    <div className="cell" id="cell-3" onClick={this.handleCellClick}>{this.props.board}</div>
+                    <div className="cell" id="cell-1" onClick={this.handleCellClick}>{this.props.board[0]}</div>
+                    <div className="cell" id="cell-2" onClick={this.handleCellClick}>{this.props.board[1]}</div>
+                    <div className="cell" id="cell-3" onClick={this.handleCellClick}>{this.props.board[2]}</div>
                 </div>
                 <div className="row">
-                    <div className="cell" id="cell-4" onClick={this.handleCellClick}>{this.props.board}</div>
-                    <div className="cell" id="cell-5" onClick={this.handleCellClick}>{this.props.board}</div>
-                    <div className="cell" id="cell-6" onClick={this.handleCellClick}>{this.props.board}</div>
+                    <div className="cell" id="cell-4" onClick={this.handleCellClick}>{this.props.board[3]}</div>
+                    <div className="cell" id="cell-5" onClick={this.handleCellClick}>{this.props.board[4]}</div>
+                    <div className="cell" id="cell-6" onClick={this.handleCellClick}>{this.props.board[5]}</div>
                 </div>
                 <div className="row">
-                    <div className="cell" id="cell-7" onClick={this.handleCellClick}>{this.props.board}</div>
-                    <div className="cell" id="cell-8" onClick={this.handleCellClick}>{this.props.board}</div>
-                    <div className="cell" id="cell-9" onClick={this.handleCellClick}>{this.props.board}</div>
+                    <div className="cell" id="cell-7" onClick={this.handleCellClick}>{this.props.board[6]}</div>
+                    <div className="cell" id="cell-8" onClick={this.handleCellClick}>{this.props.board[7]}</div>
+                    <div className="cell" id="cell-9" onClick={this.handleCellClick}>{this.props.board[8]}</div>
                 </div>
             </div>
         );
@@ -74,7 +74,7 @@ export class Board extends Component {
 const mapStateToProps = (state) => {
     console.log(state);
     return {
-        board: state.board
+        board: state.playersMoveReducer.board
     };
 }
 
