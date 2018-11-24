@@ -2,20 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 export class ChoiceAnswer extends Component {
-    render() {
-        console.log(this.props.choices.player);        
+    render() {   
         return (
-            <h3 className="choice-statement">You are {this.props.choices.player}</h3>
+            <h3 className="choice-statement">You are {this.props.player}</h3>
         );
     }
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
-        choices: {
-            player: state.choices.player
-        }
+        player: state.choices.player
     };
 }
 

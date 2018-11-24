@@ -17,12 +17,12 @@ export const initialState = {
     ]
 }
 
-// export const store = createStore(combineReducers({
-//     choices: choiceReducer,
-//     board: playersMoveReducer
-// }));
+export const store = createStore(combineReducers({
+    choices: choiceReducer,
+    board: playersMoveReducer
+}));
 
-export const store = createStore(choiceReducer);
+// export const store = createStore(choiceReducer);
 
 store.subscribe(() => store.getState());
 

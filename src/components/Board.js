@@ -14,31 +14,31 @@ class Board extends Component {
         if(e.target.innerHTML === ''){
             switch(e.target.id){
                 case "cell-1":
-                    store.dispatch(playerChoosesCell1);
+                    store.dispatch(playerChoosesCell1());
                     break;
                 case "cell-2":
-                    store.dispatch(playerChoosesCell2);
+                    store.dispatch(playerChoosesCell2());
                     break;
                 case "cell-3":
-                    store.dispatch(playerChoosesCell3);
+                    store.dispatch(playerChoosesCell3());
                     break;
                 case "cell-4":
-                    store.dispatch(playerChoosesCell4);
+                    store.dispatch(playerChoosesCell4());
                     break;
                 case "cell-5":
-                    store.dispatch(playerChoosesCell5);
+                    store.dispatch(playerChoosesCell5());
                     break;
                 case "cell-6":
-                    store.dispatch(playerChoosesCell6);
+                    store.dispatch(playerChoosesCell6());
                     break;
                 case "cell-7":
-                    store.dispatch(playerChoosesCell7);
+                    store.dispatch(playerChoosesCell7());
                     break;
                 case "cell-8":
-                    store.dispatch(playerChoosesCell8);
+                    store.dispatch(playerChoosesCell8());
                     break;
                 case "cell-9":
-                    store.dispatch(playerChoosesCell9);
+                    store.dispatch(playerChoosesCell9());
                     break;
                 default:
                     console.log('click a cell');
