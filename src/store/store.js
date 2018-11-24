@@ -1,4 +1,5 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import choiceReducer from '../reducers/choiceReducer';
 import playersMoveReducer from '../reducers/playersMoveReducer';
 
@@ -17,10 +18,13 @@ export const initialState = {
     ]
 }
 
-export const store = createStore(combineReducers({
-    choiceReducer,
-    playersMoveReducer
-}));
+export const store = createStore(
+    combineReducers({
+        choiceReducer,
+        playersMoveReducer
+    }),
+    applyMiddleware(thunk)
+);
 
 // export const store = createStore(choiceReducer);
 
