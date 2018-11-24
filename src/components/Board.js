@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { store } from '../store/store';
 import { playerChoosesCell1, playerChoosesCell2, playerChoosesCell3, playerChoosesCell4, playerChoosesCell5, playerChoosesCell6, playerChoosesCell7, playerChoosesCell8, playerChoosesCell9 } from '../actions/playerActions';
 
-class Board extends Component {
+export class Board extends Component {
     constructor(props) {
         super(props);
 
@@ -51,23 +52,30 @@ class Board extends Component {
         return (
             <div className="board-container">              
                 <div className="row">
-                    <div className="cell" id="cell-1" onClick={this.handleCellClick}></div>
-                    <div className="cell" id="cell-2" onClick={this.handleCellClick}></div>
-                    <div className="cell" id="cell-3" onClick={this.handleCellClick}></div>
+                    <div className="cell" id="cell-1" onClick={this.handleCellClick}>{this.props.board}</div>
+                    <div className="cell" id="cell-2" onClick={this.handleCellClick}>{this.props.board}</div>
+                    <div className="cell" id="cell-3" onClick={this.handleCellClick}>{this.props.board}</div>
                 </div>
                 <div className="row">
-                    <div className="cell" id="cell-4" onClick={this.handleCellClick}></div>
-                    <div className="cell" id="cell-5" onClick={this.handleCellClick}></div>
-                    <div className="cell" id="cell-6" onClick={this.handleCellClick}></div>
+                    <div className="cell" id="cell-4" onClick={this.handleCellClick}>{this.props.board}</div>
+                    <div className="cell" id="cell-5" onClick={this.handleCellClick}>{this.props.board}</div>
+                    <div className="cell" id="cell-6" onClick={this.handleCellClick}>{this.props.board}</div>
                 </div>
                 <div className="row">
-                    <div className="cell" id="cell-7" onClick={this.handleCellClick}></div>
-                    <div className="cell" id="cell-8" onClick={this.handleCellClick}></div>
-                    <div className="cell" id="cell-9" onClick={this.handleCellClick}></div>
+                    <div className="cell" id="cell-7" onClick={this.handleCellClick}>{this.props.board}</div>
+                    <div className="cell" id="cell-8" onClick={this.handleCellClick}>{this.props.board}</div>
+                    <div className="cell" id="cell-9" onClick={this.handleCellClick}>{this.props.board}</div>
                 </div>
             </div>
         );
     }
 }
 
-export default Board;
+const mapStateToProps = (state) => {
+    console.log(state);
+    return {
+        board: state.board
+    };
+}
+
+export default connect(mapStateToProps)(Board);

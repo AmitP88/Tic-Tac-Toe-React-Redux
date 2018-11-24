@@ -18,8 +18,8 @@ export const initialState = {
 }
 
 export const store = createStore(combineReducers({
-    choices: choiceReducer,
-    board: playersMoveReducer
+    choiceReducer,
+    playersMoveReducer
 }));
 
 // export const store = createStore(choiceReducer);
