@@ -8,6 +8,7 @@ export class Board extends Component {
         super(props);
 
         this.getAvailableCells = this.getAvailableCells.bind(this);
+        this.winningCombos = this.winningCombos.bind(this);
         this.handleCellClick = this.handleCellClick.bind(this);
     }
 
@@ -23,6 +24,28 @@ export class Board extends Component {
         console.log('availableCells : ', availableCells);
     }
 
+    winningCombos(state){
+        state = store.getState();
+        let currentBoardState = state.playersMoveReducer.board;
+        let player = state.choiceReducer.player;
+        console.log('currentBoardState : ', currentBoardState);
+
+        if(
+            (currentBoardState[0] === player && currentBoardState[1] === player && currentBoardState[2] === player) ||
+            (currentBoardState[3] === player && currentBoardState[4] === player && currentBoardState[5] === player) ||
+            (currentBoardState[6] === player && currentBoardState[7] === player && currentBoardState[8] === player) ||
+            (currentBoardState[0] === player && currentBoardState[3] === player && currentBoardState[6] === player) ||
+            (currentBoardState[1] === player && currentBoardState[4] === player && currentBoardState[7] === player) ||
+            (currentBoardState[2] === player && currentBoardState[5] === player && currentBoardState[8] === player) ||
+            (currentBoardState[0] === player && currentBoardState[4] === player && currentBoardState[8] === player) ||
+            (currentBoardState[2] === player && currentBoardState[4] === player && currentBoardState[6] === player)
+        ){
+            return console.log('winner? : ', true);
+        } else {
+            return console.log('winner? : ', false);
+        }
+    }
+
     handleCellClick(e) {
         e.preventDefault();
         if(e.target.innerHTML === ''){
@@ -30,38 +53,47 @@ export class Board extends Component {
                 case "cell-1":
                     store.dispatch(playerChoosesCell1());
                     this.getAvailableCells();
+                    this.winningCombos();
                     break;
                 case "cell-2":
                     store.dispatch(playerChoosesCell2());
                     this.getAvailableCells();
+                    this.winningCombos();
                     break;
                 case "cell-3":
                     store.dispatch(playerChoosesCell3());
                     this.getAvailableCells();
+                    this.winningCombos();
                     break;
                 case "cell-4":
                     store.dispatch(playerChoosesCell4());
                     this.getAvailableCells();
+                    this.winningCombos();
                     break;
                 case "cell-5":
                     store.dispatch(playerChoosesCell5());
                     this.getAvailableCells();
+                    this.winningCombos();
                     break;
                 case "cell-6":
                     store.dispatch(playerChoosesCell6());
                     this.getAvailableCells();
+                    this.winningCombos();
                     break;
                 case "cell-7":
                     store.dispatch(playerChoosesCell7());
                     this.getAvailableCells();
+                    this.winningCombos();
                     break;
                 case "cell-8":
                     store.dispatch(playerChoosesCell8());
                     this.getAvailableCells();
+                    this.winningCombos();
                     break;
                 case "cell-9":
                     store.dispatch(playerChoosesCell9());
                     this.getAvailableCells();
+                    this.winningCombos();
                     break;
                 default:
                     console.log('click a cell');
