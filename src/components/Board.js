@@ -7,13 +7,20 @@ export class Board extends Component {
     constructor(props) {
         super(props);
 
-        this.getCurrentBoardState = this.getCurrentBoardState.bind(this);
+        this.getAvailableCells = this.getAvailableCells.bind(this);
         this.handleCellClick = this.handleCellClick.bind(this);
     }
 
-    getCurrentBoardState(state) {
+    getAvailableCells(state) {
         state = store.getState();
-        console.log(state.playersMoveReducer.board);
+        let currentBoardState = state.playersMoveReducer.board;
+        console.log('currentBoardState : ', currentBoardState);
+
+        let availableCells = currentBoardState.filter((cell) => {
+            return cell === '';
+        });
+
+        console.log('availableCells : ', availableCells);
     }
 
     handleCellClick(e) {
@@ -22,39 +29,39 @@ export class Board extends Component {
             switch(e.target.id){
                 case "cell-1":
                     store.dispatch(playerChoosesCell1());
-                    this.getCurrentBoardState();
+                    this.getAvailableCells();
                     break;
                 case "cell-2":
                     store.dispatch(playerChoosesCell2());
-                    this.getCurrentBoardState();
+                    this.getAvailableCells();
                     break;
                 case "cell-3":
                     store.dispatch(playerChoosesCell3());
-                    this.getCurrentBoardState();
+                    this.getAvailableCells();
                     break;
                 case "cell-4":
                     store.dispatch(playerChoosesCell4());
-                    this.getCurrentBoardState();
+                    this.getAvailableCells();
                     break;
                 case "cell-5":
                     store.dispatch(playerChoosesCell5());
-                    this.getCurrentBoardState();
+                    this.getAvailableCells();
                     break;
                 case "cell-6":
                     store.dispatch(playerChoosesCell6());
-                    this.getCurrentBoardState();
+                    this.getAvailableCells();
                     break;
                 case "cell-7":
                     store.dispatch(playerChoosesCell7());
-                    this.getCurrentBoardState();
+                    this.getAvailableCells();
                     break;
                 case "cell-8":
                     store.dispatch(playerChoosesCell8());
-                    this.getCurrentBoardState();
+                    this.getAvailableCells();
                     break;
                 case "cell-9":
                     store.dispatch(playerChoosesCell9());
-                    this.getCurrentBoardState();
+                    this.getAvailableCells();
                     break;
                 default:
                     console.log('click a cell');
