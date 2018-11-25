@@ -14,23 +14,17 @@ import { playerChoosesCell1,
 export class Board extends Component {
     constructor(props) {
         super(props);
-
-        // this.getAvailableCells = this.getAvailableCells.bind(this);
-        // this.winningCombos = this.winningCombos.bind(this);
         this.minimax = this.minimax.bind(this);
         this.handleCellClick = this.handleCellClick.bind(this);
     }
 
+    minimax(currentBoard, player, computer) {
+        currentBoard = store.getState().playersMoveReducer.board;
+        player = store.getState().choiceReducer.player;
+        computer = store.getState().choiceReducer.computer;
 
-
-
-
-
-    minimax(currentBoard = store.getState().playersMoveReducer.board, player = store.getState().choiceReducer.player, computer = store.getState().choiceReducer.computer) {
-        const getAvailableCells = () => {
-            return currentBoard.filter((cell) => cell === '');
-        }
-
+        const availableCells = currentBoard.filter((cell) => cell === '');
+        // console.log(availableCells.length);
 
         const winningCombos = () => {
             console.log('currentBoardState : ', currentBoard);
@@ -45,34 +39,22 @@ export class Board extends Component {
                 (currentBoard[0] === player && currentBoard[4] === player && currentBoard[8] === player) ||
                 (currentBoard[2] === player && currentBoard[4] === player && currentBoard[6] === player)
             ){
-                return console.log('winner? : ', true);
+                return true;
             } else {
-                return console.log('winner? : ', false);
+                return false;
             }
         }
 
-
-
-        if(winningCombos(currentBoard = store.getState().playersMoveReducer.board, player = store.getState().choiceReducer.player)) {
+        if(winningCombos(currentBoard, player)) {
             console.log( {score: -10} );
-        } else if(winningCombos(currentBoard = store.getState().playersMoveReducer.board, computer = store.getState().choiceReducer.computer)){
+        } else if(winningCombos(currentBoard, computer)){
             console.log( {score: 10} );
-        } else if(getAvailableCells.length === 0){
+        } else if(availableCells.length === 0){
             console.log( {score: 0} );
         }
 
 
     }
-
-
-
-
-
-
-
-
-
-
 
 
     handleCellClick(e) {
