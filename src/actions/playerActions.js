@@ -17,108 +17,108 @@ a cell to fill */
 
 export const playerChoosesCell1 = () => {
     return (dispatch, getState) => {
-        const player = getState();
+        const currentState = getState();
 
         dispatch({
             type: PLAYER_CHOOSES_CELL_1,
             index: 0,
-            player: player.choiceReducer.player
+            player: currentState.choiceReducer.player
         });
     }
 }
 
 export const playerChoosesCell2 = () => {
     return (dispatch, getState) => {
-        const player = getState();
+        const currentState = getState();
 
         dispatch({
             type: PLAYER_CHOOSES_CELL_2,
             index: 1,
-            player: player.choiceReducer.player
+            player: currentState.choiceReducer.player
         });
     }
 }
 
 export const playerChoosesCell3 = () => {
     return (dispatch, getState) => {
-        const player = getState();
+        const currentState = getState();
 
         dispatch({
             type: PLAYER_CHOOSES_CELL_3,
             index: 2,
-            player: player.choiceReducer.player
+            player: currentState.choiceReducer.player
         });
     }
 }
 
 export const playerChoosesCell4 = () => {
     return (dispatch, getState) => {
-        const player = getState();
+        const currentState = getState();
 
         dispatch({
             type: PLAYER_CHOOSES_CELL_4,
             index: 3,
-            player: player.choiceReducer.player
+            player: currentState.choiceReducer.player
         });
     }
 }
 
 export const playerChoosesCell5 = () => {
     return (dispatch, getState) => {
-        const player = getState();
+        const currentState = getState();
 
         dispatch({
             type: PLAYER_CHOOSES_CELL_5,
             index: 4,
-            player: player.choiceReducer.player
+            player: currentState.choiceReducer.player
         });
     }
 }
 
 export const playerChoosesCell6 = () => {
     return (dispatch, getState) => {
-        const player = getState();
+        const currentState = getState();
 
         dispatch({
             type: PLAYER_CHOOSES_CELL_6,
             index: 5,
-            player: player.choiceReducer.player
+            player: currentState.choiceReducer.player
         });
     }
 }
 
 export const playerChoosesCell7 = () => {
     return (dispatch, getState) => {
-        const player = getState();
+        const currentState = getState();
 
         dispatch({
             type: PLAYER_CHOOSES_CELL_7,
             index: 6,
-            player: player.choiceReducer.player
+            player: currentState.choiceReducer.player
         });
     }
 }
 
 export const playerChoosesCell8 = () => {
     return (dispatch, getState) => {
-        const player = getState();
+        const currentState = getState();
 
         dispatch({
             type: PLAYER_CHOOSES_CELL_8,
             index: 7,
-            player: player.choiceReducer.player
+            player: currentState.choiceReducer.player
         });
     }
 }
 
 export const playerChoosesCell9 = () => {
     return (dispatch, getState) => {
-        const player = getState();
+        const currentState = getState();
 
         dispatch({
             type: PLAYER_CHOOSES_CELL_9,
             index: 8,
-            player: player.choiceReducer.player
+            player: currentState.choiceReducer.player
         });
     }
 }
