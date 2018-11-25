@@ -22,7 +22,8 @@ export const playerChoosesCell1 = () => {
         dispatch({
             type: PLAYER_CHOOSES_CELL_1,
             index: 0,
-            player: currentState.choiceReducer.player
+            player: currentState.choiceReducer.player,
+            currentBoard: currentState.playersMoveReducer.board
         });
     }
 }
@@ -34,7 +35,8 @@ export const playerChoosesCell2 = () => {
         dispatch({
             type: PLAYER_CHOOSES_CELL_2,
             index: 1,
-            player: currentState.choiceReducer.player
+            player: currentState.choiceReducer.player,
+            currentBoard: currentState.playersMoveReducer.board
         });
     }
 }
@@ -46,7 +48,8 @@ export const playerChoosesCell3 = () => {
         dispatch({
             type: PLAYER_CHOOSES_CELL_3,
             index: 2,
-            player: currentState.choiceReducer.player
+            player: currentState.choiceReducer.player,
+            currentBoard: currentState.playersMoveReducer.board
         });
     }
 }
@@ -58,7 +61,8 @@ export const playerChoosesCell4 = () => {
         dispatch({
             type: PLAYER_CHOOSES_CELL_4,
             index: 3,
-            player: currentState.choiceReducer.player
+            player: currentState.choiceReducer.player,
+            currentBoard: currentState.playersMoveReducer.board
         });
     }
 }
@@ -70,7 +74,8 @@ export const playerChoosesCell5 = () => {
         dispatch({
             type: PLAYER_CHOOSES_CELL_5,
             index: 4,
-            player: currentState.choiceReducer.player
+            player: currentState.choiceReducer.player,
+            currentBoard: currentState.playersMoveReducer.board
         });
     }
 }
@@ -82,7 +87,8 @@ export const playerChoosesCell6 = () => {
         dispatch({
             type: PLAYER_CHOOSES_CELL_6,
             index: 5,
-            player: currentState.choiceReducer.player
+            player: currentState.choiceReducer.player,
+            currentBoard: currentState.playersMoveReducer.board
         });
     }
 }
@@ -94,7 +100,8 @@ export const playerChoosesCell7 = () => {
         dispatch({
             type: PLAYER_CHOOSES_CELL_7,
             index: 6,
-            player: currentState.choiceReducer.player
+            player: currentState.choiceReducer.player,
+            currentBoard: currentState.playersMoveReducer.board
         });
     }
 }
@@ -106,7 +113,8 @@ export const playerChoosesCell8 = () => {
         dispatch({
             type: PLAYER_CHOOSES_CELL_8,
             index: 7,
-            player: currentState.choiceReducer.player
+            player: currentState.choiceReducer.player,
+            currentBoard: currentState.playersMoveReducer.board
         });
     }
 }
@@ -118,7 +126,8 @@ export const playerChoosesCell9 = () => {
         dispatch({
             type: PLAYER_CHOOSES_CELL_9,
             index: 8,
-            player: currentState.choiceReducer.player
+            player: currentState.choiceReducer.player,
+            currentBoard: currentState.playersMoveReducer.board
         });
     }
 }
