@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { store } from '../store/store';
-import { playerChoosesCell1, playerChoosesCell2, playerChoosesCell3, playerChoosesCell4, playerChoosesCell5, playerChoosesCell6, playerChoosesCell7, playerChoosesCell8, playerChoosesCell9 } from '../actions/playerActions';
+import { playerChoosesCell1,
+         playerChoosesCell2, 
+         playerChoosesCell3, 
+         playerChoosesCell4, 
+         playerChoosesCell5, 
+         playerChoosesCell6, 
+         playerChoosesCell7, 
+         playerChoosesCell8, 
+         playerChoosesCell9 } from '../actions/playerActions';
 
 export class Board extends Component {
     constructor(props) {
@@ -12,33 +20,28 @@ export class Board extends Component {
         this.handleCellClick = this.handleCellClick.bind(this);
     }
 
-    getAvailableCells(state) {
-        state = store.getState();
-        let currentBoardState = state.playersMoveReducer.board;
-        console.log('currentBoardState : ', currentBoardState);
+    getAvailableCells(currentBoard = store.getState().playersMoveReducer.board) {
+        console.log('currentBoardState : ', currentBoard);
 
-        let availableCells = currentBoardState.filter((cell) => {
+        let availableCells = currentBoard.filter((cell) => {
             return cell === '';
         });
 
         console.log('availableCells : ', availableCells);
     }
 
-    winningCombos(state){
-        state = store.getState();
-        let currentBoardState = state.playersMoveReducer.board;
-        let player = state.choiceReducer.player;
-        console.log('currentBoardState : ', currentBoardState);
+    winningCombos(currentBoard = store.getState().playersMoveReducer.board, player = store.getState().choiceReducer.player){
+        console.log('currentBoardState : ', currentBoard);
 
         if(
-            (currentBoardState[0] === player && currentBoardState[1] === player && currentBoardState[2] === player) ||
-            (currentBoardState[3] === player && currentBoardState[4] === player && currentBoardState[5] === player) ||
-            (currentBoardState[6] === player && currentBoardState[7] === player && currentBoardState[8] === player) ||
-            (currentBoardState[0] === player && currentBoardState[3] === player && currentBoardState[6] === player) ||
-            (currentBoardState[1] === player && currentBoardState[4] === player && currentBoardState[7] === player) ||
-            (currentBoardState[2] === player && currentBoardState[5] === player && currentBoardState[8] === player) ||
-            (currentBoardState[0] === player && currentBoardState[4] === player && currentBoardState[8] === player) ||
-            (currentBoardState[2] === player && currentBoardState[4] === player && currentBoardState[6] === player)
+            (currentBoard[0] === player && currentBoard[1] === player && currentBoard[2] === player) ||
+            (currentBoard[3] === player && currentBoard[4] === player && currentBoard[5] === player) ||
+            (currentBoard[6] === player && currentBoard[7] === player && currentBoard[8] === player) ||
+            (currentBoard[0] === player && currentBoard[3] === player && currentBoard[6] === player) ||
+            (currentBoard[1] === player && currentBoard[4] === player && currentBoard[7] === player) ||
+            (currentBoard[2] === player && currentBoard[5] === player && currentBoard[8] === player) ||
+            (currentBoard[0] === player && currentBoard[4] === player && currentBoard[8] === player) ||
+            (currentBoard[2] === player && currentBoard[4] === player && currentBoard[6] === player)
         ){
             return console.log('winner? : ', true);
         } else {
