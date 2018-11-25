@@ -7,7 +7,13 @@ export class Board extends Component {
     constructor(props) {
         super(props);
 
+        this.getCurrentBoardState = this.getCurrentBoardState.bind(this);
         this.handleCellClick = this.handleCellClick.bind(this);
+    }
+
+    getCurrentBoardState(state) {
+        state = store.getState();
+        console.log(state.playersMoveReducer.board);
     }
 
     handleCellClick(e) {
@@ -16,30 +22,39 @@ export class Board extends Component {
             switch(e.target.id){
                 case "cell-1":
                     store.dispatch(playerChoosesCell1());
+                    this.getCurrentBoardState();
                     break;
                 case "cell-2":
                     store.dispatch(playerChoosesCell2());
+                    this.getCurrentBoardState();
                     break;
                 case "cell-3":
                     store.dispatch(playerChoosesCell3());
+                    this.getCurrentBoardState();
                     break;
                 case "cell-4":
                     store.dispatch(playerChoosesCell4());
+                    this.getCurrentBoardState();
                     break;
                 case "cell-5":
                     store.dispatch(playerChoosesCell5());
+                    this.getCurrentBoardState();
                     break;
                 case "cell-6":
                     store.dispatch(playerChoosesCell6());
+                    this.getCurrentBoardState();
                     break;
                 case "cell-7":
                     store.dispatch(playerChoosesCell7());
+                    this.getCurrentBoardState();
                     break;
                 case "cell-8":
                     store.dispatch(playerChoosesCell8());
+                    this.getCurrentBoardState();
                     break;
                 case "cell-9":
                     store.dispatch(playerChoosesCell9());
+                    this.getCurrentBoardState();
                     break;
                 default:
                     console.log('click a cell');
@@ -72,7 +87,7 @@ export class Board extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
+    // console.log(state);
     return {
         board: state.playersMoveReducer.board
     };

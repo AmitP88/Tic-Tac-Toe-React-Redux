@@ -10,7 +10,7 @@ export class ChoiceAnswer extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
+    // console.log(state);
     return {
         player: state.choiceReducer.player
     };
