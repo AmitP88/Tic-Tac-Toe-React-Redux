@@ -41,21 +41,19 @@ export class Board extends Component {
         );
 
        // available cells on the board
-        const availableCells = currentBoard.filter(cell => cell === '');
-
-        console.log(availableCells);
+        const availableCells = (board) => board.filter(cell => cell !== 'X' && cell !== 'O');
 
         // checks to see if a winning combination is on the board
-        const winning = (player) => {
+        const winning = (board, player) => {
             if (
-                (currentBoard[0] === player && currentBoard[1] === player && currentBoard[2] === player) ||
-                (currentBoard[3] === player && currentBoard[4] === player && currentBoard[5] === player) ||
-                (currentBoard[6] === player && currentBoard[7] === player && currentBoard[8] === player) ||
-                (currentBoard[0] === player && currentBoard[3] === player && currentBoard[6] === player) ||
-                (currentBoard[1] === player && currentBoard[4] === player && currentBoard[7] === player) ||
-                (currentBoard[2] === player && currentBoard[5] === player && currentBoard[8] === player) ||
-                (currentBoard[0] === player && currentBoard[4] === player && currentBoard[8] === player) ||
-                (currentBoard[2] === player && currentBoard[4] === player && currentBoard[6] === player)
+                (board[0] === player && board[1] === player && board[2] === player) ||
+                (board[3] === player && board[4] === player && board[5] === player) ||
+                (board[6] === player && board[7] === player && board[8] === player) ||
+                (board[0] === player && board[3] === player && board[6] === player) ||
+                (board[1] === player && board[4] === player && board[7] === player) ||
+                (board[2] === player && board[5] === player && board[8] === player) ||
+                (board[0] === player && board[4] === player && board[8] === player) ||
+                (board[2] === player && board[4] === player && board[6] === player)
             ) {
                 return true;
             } else {
@@ -63,21 +61,78 @@ export class Board extends Component {
             }
         }
 
-        // checks for the terminal states such as win, lose, and tie and returning a value accordingly
-        if (winning(humanPlayer)){
-            return console.log({score: -10});
-        } else if (winning(aiPlayer)){
-            return console.log({score: 10});
-        } else if (availableCells.length === 0){
-            return console.log({score:0});
+        const minimax = (newBoard, player) => {
+            // available cells
+            let availSpots = availableCells(newBoard);
+
+            // checks for the terminal states such as win, lose, and tie and returning a value accordingly
+            if (winning(newBoard, humanPlayer)){
+                return {score: -10};
+            } else if (winning(newBoard, aiPlayer)){
+                return {score: 10};
+            } else if (availSpots.length === 0){
+                return {score: 0}
+            }
+
+            // an array to collect all the move objects
+            let moves = [];
+
+            // loop through available spots
+            for (let i = 0; i < availSpots.length; i++) {
+                //create an object for each and store the index of that spot
+                let move = {};
+                    move.index = newBoard[availSpots[i]];
+
+                // set the empty spot to the current player
+                newBoard[availSpots[i]] = player;
+
+                /*collect the score resulted from calling minimax 
+                    on the opponent of the current player*/
+                if (player === aiPlayer) {
+                    let result = minimax(newBoard, humanPlayer);
+                    move.score = result.score;
+                } else {
+                    let result = minimax(newBoard, aiPlayer);
+                    move.score = result.score;
+                }
+
+                // reset the spot to empty
+                newBoard[availSpots[i]] = move.index;
+
+                // push the object to the array
+                moves.push(move);
+            }
+
+            // if it is the computer's turn loop over the moves and choose the move with the highest score            
+            let bestMove;
+            if (player === aiPlayer){
+                let bestScore = -10000;
+                for (let i = 0; i < moves.length; i++){
+                    if (moves[i].score > bestScore){
+                        bestScore = moves[i].score;
+                        bestMove = i;
+                    }
+                }
+            } else {
+                // else loop over the moves and choose the move with the lowest score
+                let bestScore = 10000;
+                for (let i = 0; i < moves.length; i++){
+                    if (moves[i].score < bestScore){
+                        bestScore = moves[i].score;
+                        bestMove = i;                        
+                    }
+                }
+            }
+
+            // return the chosen move (object) from the moves array
+            return moves[bestMove];
         }
 
-        // ===================================================================================================================
+        // finding the ultimate play on the game that favors the computer
+        var bestSpot = minimax(indexBoard, aiPlayer);
 
-
-
-
-
+        //loging the results
+        console.log("index: " + bestSpot.index);
 
 
     }
