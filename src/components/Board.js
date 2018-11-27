@@ -14,22 +14,40 @@ import { playerChoosesCell1,
 export class Board extends Component {
     constructor(props) {
         super(props);
-        this.minimax = this.minimax.bind(this);
+
         this.handleCellClick = this.handleCellClick.bind(this);
+        this.computersTurn = this.computersTurn.bind(this);
     }
 
-    minimax(currentBoard, player, computer) {
-        currentBoard = store.getState().playersMoveReducer.board;
-        player = store.getState().choiceReducer.player;
-        computer = store.getState().choiceReducer.computer;
+    computersTurn() {
+        const humanPlayer = store.getState().choiceReducer.player;
+        const aiPlayer = store.getState().choiceReducer.computer;
+        let currentBoard = store.getState().playersMoveReducer.board;
 
-        const availableCells = currentBoard.filter((cell) => cell === '');
-        // console.log(availableCells.length);
+        // modify currentBoard by replacing any '' values with their index
+        let indexBoard = currentBoard.map((cell, index) => {
+            if(cell === ''){
+                return index;
+            } else {
+                return cell;
+            }
+        });
 
-        const winningCombos = () => {
-            console.log('currentBoardState : ', currentBoard);
+        console.log(
+            'current board: ', currentBoard,
+            'index board: ', indexBoard,
+            'human player: ', humanPlayer,
+            'AI player: ', aiPlayer
+        );
 
-            if(
+       // available cells on the board
+        const availableCells = currentBoard.filter(cell => cell === '');
+
+        console.log(availableCells);
+
+        // checks to see if a winning combination is on the board
+        const winning = (player) => {
+            if (
                 (currentBoard[0] === player && currentBoard[1] === player && currentBoard[2] === player) ||
                 (currentBoard[3] === player && currentBoard[4] === player && currentBoard[5] === player) ||
                 (currentBoard[6] === player && currentBoard[7] === player && currentBoard[8] === player) ||
@@ -38,23 +56,33 @@ export class Board extends Component {
                 (currentBoard[2] === player && currentBoard[5] === player && currentBoard[8] === player) ||
                 (currentBoard[0] === player && currentBoard[4] === player && currentBoard[8] === player) ||
                 (currentBoard[2] === player && currentBoard[4] === player && currentBoard[6] === player)
-            ){
+            ) {
                 return true;
             } else {
                 return false;
             }
         }
 
-        if(winningCombos(currentBoard, player)) {
-            console.log( {score: -10} );
-        } else if(winningCombos(currentBoard, computer)){
-            console.log( {score: 10} );
-        } else if(availableCells.length === 0){
-            console.log( {score: 0} );
+        // checks for the terminal states such as win, lose, and tie and returning a value accordingly
+        if (winning(humanPlayer)){
+            return console.log({score: -10});
+        } else if (winning(aiPlayer)){
+            return console.log({score: 10});
+        } else if (availableCells.length === 0){
+            return console.log({score:0});
         }
+
+        // ===================================================================================================================
+
+
+
+
+
 
 
     }
+
+
 
 
     handleCellClick(e) {
@@ -63,39 +91,39 @@ export class Board extends Component {
             switch(e.target.id){
                 case "cell-1":
                     store.dispatch(playerChoosesCell1());
-                    this.minimax();
+                    this.computersTurn();
                     break;
                 case "cell-2":
                     store.dispatch(playerChoosesCell2());
-                    this.minimax();
+                    this.computersTurn();
                     break;
                 case "cell-3":
                     store.dispatch(playerChoosesCell3());
-                    this.minimax();
+                    this.computersTurn();
                     break;
                 case "cell-4":
                     store.dispatch(playerChoosesCell4());
-                    this.minimax();
+                    this.computersTurn();
                     break;
                 case "cell-5":
                     store.dispatch(playerChoosesCell5());
-                    this.minimax();
+                    this.computersTurn();
                     break;
                 case "cell-6":
                     store.dispatch(playerChoosesCell6());
-                    this.minimax();
+                    this.computersTurn();
                     break;
                 case "cell-7":
                     store.dispatch(playerChoosesCell7());
-                    this.minimax();
+                    this.computersTurn();
                     break;
                 case "cell-8":
                     store.dispatch(playerChoosesCell8());
-                    this.minimax();
+                    this.computersTurn();
                     break;
                 case "cell-9":
                     store.dispatch(playerChoosesCell9());
-                    this.minimax();
+                    this.computersTurn();
                     break;
                 default:
                     console.log('click a cell');
