@@ -32,7 +32,7 @@ export class Board extends Component {
     computersTurn() {
         const humanPlayer = store.getState().choiceReducer.player;
         const aiPlayer = store.getState().choiceReducer.computer;
-        let currentBoard = store.getState().playersMoveReducer.board;
+        let currentBoard = store.getState().boardReducer.board;
 
         // modify currentBoard by replacing any '' values with their index
         let indexBoard = currentBoard.map((cell, index) => cell || index);
@@ -246,7 +246,7 @@ export class Board extends Component {
 const mapStateToProps = (state) => {
     console.log(state);
     return {
-        board: state.playersMoveReducer.board
+        board: state.boardReducer.board
     };
 }
 
