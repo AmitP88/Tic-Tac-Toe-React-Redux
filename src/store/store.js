@@ -3,7 +3,6 @@ import thunk from 'redux-thunk';
 import choiceReducer from '../reducers/choiceReducer';
 import playersMoveReducer from '../reducers/playersMoveReducer';
 import computersMoveReducer from '../reducers/computersMoveReducer';
-import updateBoardReducer from '../reducers/updateBoardReducer';
 
 export const X = 'X';
 export const O = 'O';
@@ -24,13 +23,10 @@ export const store = createStore(
     combineReducers({
         choiceReducer,
         playersMoveReducer,
-        computersMoveReducer,
-        updateBoardReducer
+        computersMoveReducer
     }),
     applyMiddleware(thunk)
 );
-
-// export const store = createStore(choiceReducer);
 
 store.subscribe(() => store.getState());
 

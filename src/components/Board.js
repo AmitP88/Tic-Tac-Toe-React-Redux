@@ -21,8 +21,6 @@ import { computerChoosesCell1,
          computerChoosesCell8, 
          computerChoosesCell9 } from '../actions/computerActions';
          
-import { updateBoard } from '../actions/updateBoardActions';
-
 export class Board extends Component {
     constructor(props) {
         super(props);
@@ -136,47 +134,38 @@ export class Board extends Component {
             case 0:
                 console.log("index: " + bestSpot.index);
                 store.dispatch(computerChoosesCell1());
-                store.dispatch(updateBoard());
                 break;
             case 1:
                 console.log("index: " + bestSpot.index);
                 store.dispatch(computerChoosesCell2());
-                store.dispatch(updateBoard());
                 break;
             case 2:
                 console.log("index: " + bestSpot.index);
                 store.dispatch(computerChoosesCell3());
-                store.dispatch(updateBoard());
                 break;
             case 3:
                 console.log("index: " + bestSpot.index);
                 store.dispatch(computerChoosesCell4());
-                store.dispatch(updateBoard());
                 break;
             case 4:
                 console.log("index: " + bestSpot.index);
                 store.dispatch(computerChoosesCell5());
-                store.dispatch(updateBoard());
                 break;
             case 5:
                 console.log("index: " + bestSpot.index);
                 store.dispatch(computerChoosesCell6());
-                store.dispatch(updateBoard());
                 break;
             case 6:
                 console.log("index: " + bestSpot.index);
                 store.dispatch(computerChoosesCell7());
-                store.dispatch(updateBoard());
                 break;
             case 7:
                 console.log("index: " + bestSpot.index);
                 store.dispatch(computerChoosesCell8());
-                store.dispatch(updateBoard());
                 break;
             case 8:
                 console.log("index: " + bestSpot.index);
                 store.dispatch(computerChoosesCell9());
-                store.dispatch(updateBoard());
                 break;
             default:
                 console.log('no bestSpot left!');
@@ -257,7 +246,7 @@ export class Board extends Component {
 const mapStateToProps = (state) => {
     console.log(state);
     return {
-        board: state.updateBoardReducer.board
+        board: state.playersMoveReducer.board
     };
 }
 
