@@ -11,6 +11,16 @@ import { playerChoosesCell1,
          playerChoosesCell8, 
          playerChoosesCell9 } from '../actions/playerActions';
 
+import { computerChoosesCell1,
+         computerChoosesCell2, 
+         computerChoosesCell3, 
+         computerChoosesCell4, 
+         computerChoosesCell5, 
+         computerChoosesCell6, 
+         computerChoosesCell7, 
+         computerChoosesCell8, 
+         computerChoosesCell9 } from '../actions/computerActions';
+
 export class Board extends Component {
     constructor(props) {
         super(props);
@@ -25,13 +35,7 @@ export class Board extends Component {
         let currentBoard = store.getState().playersMoveReducer.board;
 
         // modify currentBoard by replacing any '' values with their index
-        let indexBoard = currentBoard.map((cell, index) => {
-            if(cell === ''){
-                return index;
-            } else {
-                return cell;
-            }
-        });
+        let indexBoard = currentBoard.map((cell, index) => cell || index);
 
         console.log(
             'current board: ', currentBoard,
@@ -132,7 +136,57 @@ export class Board extends Component {
         var bestSpot = minimax(indexBoard, aiPlayer);
 
         //loging the results
-        console.log("index: " + bestSpot.index);
+        // console.log(bestSpot);
+
+        // dispatch computer action based on index returned from bestSpot
+
+
+        console.log(currentBoard);
+
+        switch(bestSpot.index){
+            case 0:
+                console.log("index: " + bestSpot.index);
+                store.dispatch(computerChoosesCell1());
+                break;
+            case 1:
+                console.log("index: " + bestSpot.index);
+                store.dispatch(computerChoosesCell2());
+                break;
+            case 2:
+                console.log("index: " + bestSpot.index);
+                store.dispatch(computerChoosesCell3());
+                break;
+            case 3:
+                console.log("index: " + bestSpot.index);
+                store.dispatch(computerChoosesCell4());
+                break;
+            case 4:
+                console.log("index: " + bestSpot.index);
+                store.dispatch(computerChoosesCell5());
+                break;
+            case 5:
+                console.log("index: " + bestSpot.index);
+                store.dispatch(computerChoosesCell6());
+                break;
+            case 6:
+                console.log("index: " + bestSpot.index);
+                store.dispatch(computerChoosesCell7());
+                break;
+            case 7:
+                console.log("index: " + bestSpot.index);
+                store.dispatch(computerChoosesCell8());
+                break;
+            case 8:
+                console.log("index: " + bestSpot.index);
+                store.dispatch(computerChoosesCell9());
+                break;
+            default:
+                console.log('no bestSpot left!');
+                break;
+        }
+
+
+
 
 
     }
@@ -147,6 +201,7 @@ export class Board extends Component {
                 case "cell-1":
                     store.dispatch(playerChoosesCell1());
                     this.computersTurn();
+                    console.log(store.getState());
                     break;
                 case "cell-2":
                     store.dispatch(playerChoosesCell2());

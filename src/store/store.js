@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import choiceReducer from '../reducers/choiceReducer';
 import playersMoveReducer from '../reducers/playersMoveReducer';
+import computersMoveReducer from '../reducers/computersMoveReducer';
 
 export const X = 'X';
 export const O = 'O';
@@ -21,7 +22,8 @@ export const initialState = {
 export const store = createStore(
     combineReducers({
         choiceReducer,
-        playersMoveReducer
+        playersMoveReducer,
+        computersMoveReducer
     }),
     applyMiddleware(thunk)
 );
