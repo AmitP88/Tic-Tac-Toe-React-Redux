@@ -247,15 +247,21 @@ const mapStateToProps = (state) => {
     const playersMoveBoard = store.getState().playersMoveReducer.board;
     const computersMoveBoard = store.getState().computersMoveReducer.board;
 
-    const displayedBoard = [];
+    // const displayedBoard = [];
+
+    // displayedBoard should be ["X", "", "", "", "O", "", "", "", ""]
+
+    const displayedBoard = playersMoveBoard.map((val, i) => val === '' && computersMoveBoard[i] === '' ? '' : computersMoveBoard[i] === '' ? val : computersMoveBoard[i]); //   ["X", "", "", "", "O", "", "", "", ""]
+
 
     console.log(
         'playersMoveBoard: ', playersMoveBoard,
-        'computersMoveBoard: ', computersMoveBoard
+        'computersMoveBoard: ', computersMoveBoard,
+        'displayedBoard: ', displayedBoard
     )
 
     return {
-        board: state.playersMoveReducer.board
+        board: displayedBoard
     };
 }
 
