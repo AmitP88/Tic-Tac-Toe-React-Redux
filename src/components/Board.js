@@ -37,13 +37,6 @@ export class Board extends Component {
         // modify currentBoard by replacing any '' values with their index
         let indexBoard = currentBoard.map((cell, index) => cell || index);
 
-        console.log(
-            'current board: ', currentBoard,
-            'index board: ', indexBoard,
-            'human player: ', humanPlayer,
-            'AI player: ', aiPlayer
-        );
-
        // available cells on the board
         const availableCells = (board) => board.filter(cell => cell !== 'X' && cell !== 'O');
 
@@ -135,12 +128,6 @@ export class Board extends Component {
         // finding the ultimate play on the game that favors the computer
         var bestSpot = minimax(indexBoard, aiPlayer);
 
-        //loging the results
-        // console.log(bestSpot);
-
-        // dispatch computer action based on index returned from bestSpot
-
-
         console.log(currentBoard);
 
         switch(bestSpot.index){
@@ -184,15 +171,7 @@ export class Board extends Component {
                 console.log('no bestSpot left!');
                 break;
         }
-
-
-
-
-
     }
-
-
-
 
     handleCellClick(e) {
         e.preventDefault();
@@ -201,7 +180,6 @@ export class Board extends Component {
                 case "cell-1":
                     store.dispatch(playerChoosesCell1());
                     this.computersTurn();
-                    console.log(store.getState());
                     break;
                 case "cell-2":
                     store.dispatch(playerChoosesCell2());
@@ -266,6 +244,16 @@ export class Board extends Component {
 }
 
 const mapStateToProps = (state) => {
+    const playersMoveBoard = store.getState().playersMoveReducer.board;
+    const computersMoveBoard = store.getState().computersMoveReducer.board;
+
+    const displayedBoard = [];
+
+    console.log(
+        'playersMoveBoard: ', playersMoveBoard,
+        'computersMoveBoard: ', computersMoveBoard
+    )
+
     return {
         board: state.playersMoveReducer.board
     };
