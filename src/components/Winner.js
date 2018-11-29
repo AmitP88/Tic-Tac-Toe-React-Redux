@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Reset from './Reset';
 
 class Winner extends Component {
     render() {
@@ -12,10 +11,7 @@ class Winner extends Component {
         }
 
         return (
-            <div className="winner-container">
-                {winner}
-                <Reset />        
-            </div>
+            <div className="winner-container">{winner}</div>
         );        
     }
 
