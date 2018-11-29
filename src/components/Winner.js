@@ -1,20 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Reset from './Reset';
 
-const Winner = () => {
-    return (
-        <div className="winner-container">
-            <h3 className="winner">You </h3>
-            <Reset />        
-        </div>
-    );
+class Winner extends Component {
+    render() {
+        let endgame = this.props.endgame;
+        let winner;
+
+        if(endgame !== ''){
+            winner = <h3 className="winner">Winner: {this.props.endgame}</h3>                    
+        }
+
+        return (
+            <div className="winner-container">
+                {winner}
+                <Reset />        
+            </div>
+        );        
+    }
+
 }
 
-// const mapStateToProps = (state) => {
-//     console.log(state);
-//     return {
-//         endgame: state.winnerReducer.endgame.winner
-//     }
-// }
+const mapStateToProps = (state) => {
+    console.log(state);
+    return {
+        endgame: state.winnerReducer.winner
+    }
+}
 
-export default Winner;
+export default connect(mapStateToProps)(Winner);
+
+// export default Winner;

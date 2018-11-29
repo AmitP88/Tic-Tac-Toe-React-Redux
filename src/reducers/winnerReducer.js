@@ -8,7 +8,7 @@ const winnerReducer = (state = initialState, action) => {
         }
     } else if(action.type === PLAYER_WINS){
         return {
-            winner: 'You'
+            winner: 'Player'
         }
     } else if(action.type === DRAW){
         return {
