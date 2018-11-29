@@ -20,6 +20,10 @@ import { computerChoosesCell1,
          computerChoosesCell7, 
          computerChoosesCell8, 
          computerChoosesCell9 } from '../actions/computerActions';
+
+import { computerWins, 
+         playerWins,
+         draw } from '../actions/winnerActions';
          
 export class Board extends Component {
     constructor(props) {

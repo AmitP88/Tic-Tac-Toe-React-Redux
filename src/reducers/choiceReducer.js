@@ -7,7 +7,6 @@ const choiceReducer = (state = initialState, action) => {
             player: X,
             computer: O
         };
-
     } else if(action.type === PLAYER_O){
         return {
             player: O,
