@@ -10,4 +10,11 @@ const Winner = () => {
     );
 }
 
+// const mapStateToProps = (state) => {
+//     console.log(state);
+//     return {
+//         endgame: state.winnerReducer.endgame.winner
+//     }
+// }
+
 export default Winner;

@@ -63,11 +63,11 @@ export class Board extends Component {
 
         // checks for the terminal states such as win, lose, and tie and returning a value accordingly
         if (winning(currentBoard, humanPlayer)){
-            return store.dispatch(playerWins());
+            store.dispatch(playerWins());
         } else if (winning(currentBoard, aiPlayer)){
-            return store.dispatch(computerWins());
+            store.dispatch(computerWins());
         } else if ((winning(currentBoard, humanPlayer) === false) && (winning(currentBoard, aiPlayer) === false) && (availSpots.length === 0)){
-            return store.dispatch(draw());
+            store.dispatch(draw());
         }
     }
 
@@ -154,48 +154,48 @@ export class Board extends Component {
         switch(bestSpot.index){
             case 0:
                 console.log("index: " + bestSpot.index);
-                this.determineWinner();
                 store.dispatch(computerChoosesCell1());
+                this.determineWinner();                
                 break;
             case 1:
                 console.log("index: " + bestSpot.index);
-                this.determineWinner();
                 store.dispatch(computerChoosesCell2());
+                this.determineWinner();                
                 break;
             case 2:
                 console.log("index: " + bestSpot.index);
-                this.determineWinner();
                 store.dispatch(computerChoosesCell3());
+                this.determineWinner();                
                 break;
             case 3:
                 console.log("index: " + bestSpot.index);
-                this.determineWinner();
                 store.dispatch(computerChoosesCell4());
+                this.determineWinner();               
                 break;
             case 4:
                 console.log("index: " + bestSpot.index);
-                this.determineWinner();
                 store.dispatch(computerChoosesCell5());
+                this.determineWinner();                
                 break;
             case 5:
                 console.log("index: " + bestSpot.index);
-                this.determineWinner();
                 store.dispatch(computerChoosesCell6());
+                this.determineWinner();                
                 break;
             case 6:
                 console.log("index: " + bestSpot.index);
-                this.determineWinner();
                 store.dispatch(computerChoosesCell7());
+                this.determineWinner();                
                 break;
             case 7:
                 console.log("index: " + bestSpot.index);
-                this.determineWinner();
                 store.dispatch(computerChoosesCell8());
+                this.determineWinner();                
                 break;
             case 8:
                 console.log("index: " + bestSpot.index);
-                this.determineWinner();
                 store.dispatch(computerChoosesCell9());
+                this.determineWinner();                
                 break;
             default:
                 console.log('no bestSpot left!');
@@ -208,48 +208,48 @@ export class Board extends Component {
         if(e.target.innerHTML === ''){
             switch(e.target.id){
                 case "cell-1":
-                    this.determineWinner();
                     store.dispatch(playerChoosesCell1());
+                    this.determineWinner();                    
                     this.computersTurn();
                     break;
                 case "cell-2":
-                    this.determineWinner();
                     store.dispatch(playerChoosesCell2());
+                    this.determineWinner();                    
                     this.computersTurn();
                     break;
                 case "cell-3":
-                    this.determineWinner();
                     store.dispatch(playerChoosesCell3());
+                    this.determineWinner();                    
                     this.computersTurn();
                     break;
                 case "cell-4":
-                    this.determineWinner();
                     store.dispatch(playerChoosesCell4());
+                    this.determineWinner();                    
                     this.computersTurn();
                     break;
                 case "cell-5":
-                    this.determineWinner();
                     store.dispatch(playerChoosesCell5());
+                    this.determineWinner();                    
                     this.computersTurn();
                     break;
                 case "cell-6":
-                    this.determineWinner();
                     store.dispatch(playerChoosesCell6());
+                    this.determineWinner();                    
                     this.computersTurn();
                     break;
                 case "cell-7":
-                    this.determineWinner();
                     store.dispatch(playerChoosesCell7());
+                    this.determineWinner();                    
                     this.computersTurn();
                     break;
                 case "cell-8":
-                    this.determineWinner();
                     store.dispatch(playerChoosesCell8());
+                    this.determineWinner();                    
                     this.computersTurn();
                     break;
                 case "cell-9":
-                    this.determineWinner();
                     store.dispatch(playerChoosesCell9());
+                    this.determineWinner();                    
                     this.computersTurn();
                     break;
                 default:
