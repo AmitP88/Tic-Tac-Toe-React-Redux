@@ -24,6 +24,9 @@ import {
     COMPUTER_CHOOSES_CELL_9
 } from '../actions/computerActions';
 
+// Reset action (resets the entire game including the board)
+import { RESET } from '../actions/resetActions';
+
 import { initialState } from '../store/store';
 
 const boardReducer = (state = initialState, action) => {
@@ -103,6 +106,11 @@ const boardReducer = (state = initialState, action) => {
         case COMPUTER_CHOOSES_CELL_9:
             return {
                 board: [...state.board.slice(0, action.index), action.computer, ...state.board.slice(action.index + 1)]
+            }
+
+        case RESET:
+            return {
+                board: initialState.board
             }
         default:        
             return state;

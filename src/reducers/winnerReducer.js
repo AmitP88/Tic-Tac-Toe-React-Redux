@@ -1,5 +1,6 @@
 import { initialState } from '../store/store';
 import { COMPUTER_WINS, PLAYER_WINS, DRAW } from '../actions/winnerActions';
+import { RESET } from '../actions/resetActions';
 
 const winnerReducer = (state = initialState, action) => {
     if(action.type === COMPUTER_WINS){
@@ -13,6 +14,10 @@ const winnerReducer = (state = initialState, action) => {
     } else if(action.type === DRAW){
         return {
             winner: 'Draw'
+        }
+    } else if(action.type === RESET){
+        return {
+            winner: initialState.endgame.winner
         }
     } else {
         return state;
