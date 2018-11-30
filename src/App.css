@@ -9,12 +9,18 @@
   margin: 0 auto;  
 }
 
+.winner-container {
+  position: relative;
+  top: 18%;
+}
+
 h3 {
   font-size: 25px;
 }
 
 .winner {
   margin-top: 35%;
+  text-align: center;
 }
 
 .choice-question {
@@ -74,4 +80,5 @@ button:hover {
   margin: 0 auto;
   margin-bottom: 20px;
   font-size: 15px;
+  margin-left: 35%;
 }
