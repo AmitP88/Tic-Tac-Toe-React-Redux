@@ -7,18 +7,18 @@ class Winner extends Component {
         let endgame = this.props.endgame;
         let winner;
 
-        if(endgame !== ''){
-            winner = <h3 className="winner">Winner: {this.props.endgame}</h3>                    
+        if(endgame === undefined) {
+            return null;
+        } else if(endgame !== ''){
+            winner = <h3 className="winner">Winner: {this.props.endgame}</h3>
+            return (
+                <div className="winner-container">
+                    {winner}
+                    <Reset />
+                </div>
+            );  
         }
-
-        return (
-            <div className="winner-container">
-                {winner}
-                <Reset />
-            </div>
-        );        
     }
-
 }
 
 const mapStateToProps = (state) => {
@@ -29,5 +29,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(Winner);
-
-// export default Winner;

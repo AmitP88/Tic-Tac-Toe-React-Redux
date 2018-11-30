@@ -18,7 +18,6 @@ class Reset extends Component {
             <button className="resetButton" onClick={this.handleReset}>Reset</button>
         );        
     }
-
 }
 
 export default Reset;

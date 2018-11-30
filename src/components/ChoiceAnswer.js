@@ -10,7 +10,6 @@ export class ChoiceAnswer extends Component {
                 <h3 className="choice-statement">You are {this.props.player}</h3>
             );   
         }
-
     }
 }
 
