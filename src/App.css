@@ -12,6 +12,7 @@
 .winner-container {
   position: relative;
   top: 18%;
+  background-color: rgb(102,51,153, 0.7);
 }
 
 h3 {
