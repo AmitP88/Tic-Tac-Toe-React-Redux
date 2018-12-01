@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { store } from '../store/store';
 import { connect } from 'react-redux';
 
 export class ChoiceAnswer extends Component {
     render() {  
-        if(this.props.player === undefined){
+        if(store.getState().renderReducer.ChoiceAnswer === false){
             return null;
-        } else if(this.props.player === 'X' || this.props.player === 'O'){
+        } else {
             return (
                 <h3 className="choice-statement">You are {this.props.player}</h3>
             );   

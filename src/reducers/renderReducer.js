@@ -1,16 +1,11 @@
 import {
     // render variables
     RENDER_CHOICEQUESTION,
-    RENDER_CHOICEANSWER,
-    RENDER_BOARD,
-    RENDER_WINNER,
-    
-    // un-render variables
-    UNRENDER_CHOICEQUESTION,
-    UNRENDER_CHOICEANSWER,
-    UNRENDER_BOARD,
-    UNRENDER_WINNER   
+    RENDER_CHOICEANSWER_AND_BOARD,
+    RENDER_WINNER
 } from '../actions/renderActions';
+
+import { RESET } from '../actions/resetActions';
 
 import { initialState } from '../store/store';
 
@@ -21,34 +16,22 @@ const renderReducer = (state = initialState, action) => {
             return {
                 ChoiceQuestion: true
             }
-        case RENDER_CHOICEANSWER:
+        case RENDER_CHOICEANSWER_AND_BOARD:
             return {
-                ChoiceAnswer: true
-            }
-        case RENDER_BOARD:
-            return {
+                ChoiceQuestion: false,
+                ChoiceAnswer: true,
                 Board: true
             }
         case RENDER_WINNER:
             return {
                 Winner: true
             }
-        // un-render components
-        case UNRENDER_CHOICEQUESTION:
+        case RESET:
             return {
-                ChoiceQuestion: false
-            }
-        case UNRENDER_CHOICEANSWER:
-            return {
-                ChoiceAnswer: false
-            }
-        case UNRENDER_BOARD:
-            return {
-                Board: false
-            }
-        case UNRENDER_WINNER:
-            return {
-                Winner: false
+                ChoiceQuestion: initialState.ChoiceQuestion,
+                ChoiceAnswer: initialState.ChoiceAnswer,
+                Board: initialState.Board,
+                Winner: initialState.Winner
             }
         default:
             return state;

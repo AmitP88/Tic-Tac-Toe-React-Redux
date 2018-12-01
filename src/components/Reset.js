@@ -12,6 +12,7 @@ class Reset extends Component {
         e.preventDefault();
         store.dispatch(resetGame());
         console.log('Resets the game!');
+        console.log(store.getState());
     }
     render() {
         return (

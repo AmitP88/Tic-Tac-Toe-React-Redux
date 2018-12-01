@@ -19,7 +19,7 @@ class Winner extends Component {
             return (
                 <ReactModal className="winner-container" isOpen={true}>
                     {winner}
-                    <Reset />              
+                    <Reset />   
                 </ReactModal>
             );  
         }

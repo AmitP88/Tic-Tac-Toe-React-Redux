@@ -21,12 +21,11 @@ export const initialState = {
     endgame: {
         winner: ''
     },
-    render: {
-        ChoiceQuestion: true,
-        ChoiceAnswer: false,
-        Board: false,
-        Winner: false
-    }
+    // render components?
+    ChoiceQuestion: true,
+    ChoiceAnswer: false,
+    Board: false,
+    Winner: false
 }
 
 export const store = createStore(
