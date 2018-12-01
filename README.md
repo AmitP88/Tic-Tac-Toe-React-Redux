@@ -20,7 +20,7 @@
 [Endgame]: https://github.com/AmitP88/Tic-Tac-Toe-React-Redux/blob/master/EndState.png
 
 
-> This game was built using React, Redux, and a sophisticated algorithm
+> This game was built using React, Redux, and a [sophisticated algorithm](https://medium.freecodecamp.org/how-to-make-your-tic-tac-toe-game-unbeatable-by-using-the-minimax-algorithm-9d690bad4b37)
 > that will strike fear into any opponent. Play if you dare. Muahahahaha! ;D
 
 
