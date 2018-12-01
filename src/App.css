@@ -2,6 +2,20 @@
   text-align: center;
 }
 
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 10vmin;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .choice-container, .winner-container {
   width: 310px;
   height: 310px;
@@ -89,6 +103,11 @@ button:hover {
 
 footer {
   padding: 5%;
+}
+
+.builtWith {
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .fa-github {
