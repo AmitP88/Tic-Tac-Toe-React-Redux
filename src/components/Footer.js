@@ -7,9 +7,9 @@ class Footer extends Component {
     render() {
       return (
         <footer>
-          <p className="builtWith">
+          <div className="builtWith">
             Built with <Tooltip content="React"><img src={react} className="App-logo" alt="logo" /></Tooltip>+<Tooltip content="Redux"><img src={redux} className="App-logo" alt="logo" /></Tooltip>
-          </p>
+          </div>
             
             <a href="https://github.com/AmitP88/Tic-Tac-Toe-React-Redux" target="_blank" rel="noopener noreferrer">
             <i className="fa fa-github fa-4x"></i>
