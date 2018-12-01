@@ -1,3 +1,26 @@
+# Classic Tic Tac Toe
+
+## Do you have what it takes to become victorious?
+## Test your strategy skills against a formidable opponent - your PC.
+## Who will win? Man? Or machine?
+
+![alt text][logo]
+
+[logo]: https://github.com/AmitP88/Tic-Tac-Toe-React-Redux/blob/master/ChoiceQuestion.png
+
+![alt text][logo]
+
+[logo]: https://github.com/AmitP88/Tic-Tac-Toe-React-Redux/blob/master/Playing.png
+
+![alt text][logo]
+
+[logo]: https://github.com/AmitP88/Tic-Tac-Toe-React-Redux/blob/master/EndState.png
+
+
+### This game was built using React, Redux, and a sophisticated algorithm
+### that will strike fear into any opponent. Play if you dare. Muahahahaha! ;D
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
