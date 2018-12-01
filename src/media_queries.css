@@ -6,7 +6,7 @@
 
 @media only screen and (min-width: 320px){
     .winner-container {
-        top: 20%;
+        top: 18%;
     }
 }
 
@@ -20,7 +20,7 @@
     }
 
     .choice-container, .winner-container {
-        top: 28%;
+        top: 25%;
         width: 462px;
         height: 462px;
     }
