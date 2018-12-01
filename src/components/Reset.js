@@ -11,9 +11,8 @@ class Reset extends Component {
     handleReset(e) {
         e.preventDefault();
         store.dispatch(resetGame());
-        console.log('Resets the game!');
-        console.log(store.getState());
     }
+    
     render() {
         return (
             <button className="resetButton" onClick={this.handleReset}>Reset</button>

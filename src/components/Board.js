@@ -25,6 +25,8 @@ import { computerWins,
          playerWins,
          draw } from '../actions/winnerActions';
 
+// Implemented MiniMax Algorithm solution from https://medium.freecodecamp.org/how-to-make-your-tic-tac-toe-game-unbeatable-by-using-the-minimax-algorithm-9d690bad4b37
+
 const winning = (board, player) => {
     if (
         (board[0] === player && board[1] === player && board[2] === player) ||

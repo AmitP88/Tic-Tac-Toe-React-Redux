@@ -13,17 +13,16 @@ class Winner extends Component {
         if(store.getState().renderReducer.Winner === false){
             return null;
         } else {
-            let endgame = this.props.endgame;
             let winner;
 
-            if(endgame === undefined) {
+            if(this.props.endgame === undefined) {
                 return null;
-            } else if(endgame !== ''){
+            } else if(this.props.endgame !== ''){
                 winner = <h3 className="winner">Winner: {this.props.endgame}</h3>
                 return (
                     <ReactModal className="winner-container" isOpen={true}>
                         {winner}
-                        <Reset />   
+                        <Reset />
                     </ReactModal>
                 );  
             }            

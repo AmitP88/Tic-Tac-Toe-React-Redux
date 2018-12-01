@@ -11,19 +11,17 @@ class ChoiceQuestion extends Component {
     }
 
     handleChoice(e) {
+        e.preventDefault();
         if(e.target.id === X){
             store.dispatch(choosePlayerX());
             store.dispatch(render_choiceAnswerAndBoard());
-            this.forceUpdate();
         } else if(e.target.id === O){
             store.dispatch(choosePlayerO());
             store.dispatch(render_choiceAnswerAndBoard());
-            this.forceUpdate();
         }
     }
 
     render() {
-        console.log(store.getState());
         if(this.props.ChoiceQuestion === false) {
             return null;
         } else {
@@ -41,8 +39,6 @@ class ChoiceQuestion extends Component {
         }
     }
 }
-
-// export default ChoiceQuestion;
 
 const mapStateToProps = (state) => {
     return {
