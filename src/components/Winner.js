@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { store } from '../store/store';
 import { connect } from 'react-redux';
 import ReactModal from 'react-modal';
 import Reset from '../components/Reset';
@@ -9,20 +10,25 @@ class Winner extends Component {
     }
 
     render() {
-        let endgame = this.props.endgame;
-        let winner;
-
-        if(endgame === undefined) {
+        if(store.getState().renderReducer.Winner === false){
             return null;
-        } else if(endgame !== ''){
-            winner = <h3 className="winner">Winner: {this.props.endgame}</h3>
-            return (
-                <ReactModal className="winner-container" isOpen={true}>
-                    {winner}
-                    <Reset />   
-                </ReactModal>
-            );  
+        } else {
+            let endgame = this.props.endgame;
+            let winner;
+
+            if(endgame === undefined) {
+                return null;
+            } else if(endgame !== ''){
+                winner = <h3 className="winner">Winner: {this.props.endgame}</h3>
+                return (
+                    <ReactModal className="winner-container" isOpen={true}>
+                        {winner}
+                        <Reset />   
+                    </ReactModal>
+                );  
+            }            
         }
+
     }
 }
 
