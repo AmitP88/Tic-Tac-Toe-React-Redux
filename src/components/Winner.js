@@ -18,16 +18,15 @@ class Winner extends Component {
             if(this.props.endgame === undefined) {
                 return null;
             } else if(this.props.endgame !== ''){
-                winner = <h3 className="winner">Winner: {this.props.endgame}</h3>
+                winner = <h3 className="winner">You {this.props.endgame}</h3>
                 return (
                     <ReactModal className="winner-container" isOpen={true}>
                         {winner}
                         <Reset />
                     </ReactModal>
                 );  
-            }            
+            }
         }
-
     }
 }
 

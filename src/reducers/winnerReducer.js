@@ -5,15 +5,15 @@ import { RESET } from '../actions/resetActions';
 const winnerReducer = (state = initialState, action) => {
     if(action.type === COMPUTER_WINS){
         return {
-            winner: 'Computer'
+            winner: 'Lose'
         }
     } else if(action.type === PLAYER_WINS){
         return {
-            winner: 'Player'
+            winner: 'Win'
         }
     } else if(action.type === DRAW){
         return {
-            winner: 'Draw'
+            winner: 'Tied'
         }
     } else if(action.type === RESET){
         return {
