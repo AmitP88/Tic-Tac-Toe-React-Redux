@@ -2,7 +2,10 @@
 
 > Do you have what it takes to become victorious?
 > Test your strategy skills against a formidable opponent - your PC.
-> Who will win? Man? Or machine?
+> Who will win? Man? Or machine? 
+
+> Play the game [here](https://amitp88.github.io/Tic-Tac-Toe-React-Redux/),
+> or download the repo and follow the npm instructions below.
 
 ![alt text][ChoiceQuestion]
 
