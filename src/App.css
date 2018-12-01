@@ -22,6 +22,8 @@ h3 {
 .winner {
   margin-top: 35%;
   text-align: center;
+  font-size: 40px;
+  color: navy;
 }
 
 .choice-question {
