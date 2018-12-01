@@ -2,12 +2,20 @@
     .board-container {
         width: 100vw;
     }
+
+
 }
 
 @media only screen and (min-width: 320px){
     .winner-container {
         top: 18%;
     }
+
+    .builtWith {
+        margin-top: 10%;
+        margin-bottom: 20%;
+    }
+
 }
 
 @media only screen and (min-width: 768px) {
@@ -50,5 +58,17 @@
         font-size: 100px;
     }
 
+    .builtWith {
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
 
+
+}
+
+@media only screen and (min-width: 768px) {
+    .builtWith {
+        margin-top: 0;
+        margin-bottom: 10%;
+    }    
 }

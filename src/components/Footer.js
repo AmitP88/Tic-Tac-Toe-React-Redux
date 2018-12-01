@@ -7,7 +7,7 @@ class Footer extends Component {
       return (
         <footer>
           <p className="builtWith">
-            Built with <img src={react} className="App-logo" alt="logo" /> + <img src={redux} className="App-logo" alt="logo" />
+            Built with <img src={react} className="App-logo" alt="logo" />+<img src={redux} className="App-logo" alt="logo" />
           </p>
             
             <a href="https://github.com/AmitP88/Tic-Tac-Toe-React-Redux" target="_blank" rel="noopener noreferrer">

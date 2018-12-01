@@ -106,8 +106,7 @@ footer {
 }
 
 .builtWith {
-  margin-top: 5%;
-  margin-bottom: 5%;
+  font-weight: bold;
 }
 
 .fa-github {
