@@ -86,3 +86,24 @@ button:hover {
   font-size: 15px;
   margin-left: 35%;
 }
+
+footer {
+  padding: 5%;
+}
+
+.fa-github {
+  color: whitesmoke;
+}
+
+.fa-4x {
+  color: black;
+}
+
+.fa-github:hover {
+  color: rgb(85, 26, 139);
+}
+
+.github-profile-link {
+  text-decoration-line: none;
+  font-weight: bold;
+}

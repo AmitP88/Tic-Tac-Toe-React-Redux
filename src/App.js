@@ -5,9 +5,12 @@ import ChoiceQuestion from './components/ChoiceQuestion';
 import ChoiceAnswer from './components/ChoiceAnswer';
 import Winner from './components/Winner';
 import Board from './components/Board';
-
+import Footer from './components/Footer';
 import store from './store/store';
 import { Provider } from 'react-redux';
+import 'font-awesome/css/font-awesome.min.css';
+
+
 
 class App extends Component {
   render() {
@@ -19,6 +22,7 @@ class App extends Component {
             <ChoiceAnswer />
             <Board />
             <Winner />
+            <Footer />
           </div>        
         </Provider>
     );
