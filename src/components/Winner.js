@@ -27,7 +27,6 @@ class Winner extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         endgame: state.winnerReducer.winner
     }

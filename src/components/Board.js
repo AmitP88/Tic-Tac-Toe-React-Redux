@@ -149,51 +149,40 @@ export class Board extends Component {
         // finding the ultimate play on the game that favors the computer
         var bestSpot = minimax(indexBoard, aiPlayer);
 
-        console.log(currentBoard);
-
         switch(bestSpot.index){
             case 0:
-                console.log("index: " + bestSpot.index);
                 store.dispatch(computerChoosesCell1());
                 this.determineWinner();                
                 break;
             case 1:
-                console.log("index: " + bestSpot.index);
                 store.dispatch(computerChoosesCell2());
                 this.determineWinner();                
                 break;
             case 2:
-                console.log("index: " + bestSpot.index);
                 store.dispatch(computerChoosesCell3());
                 this.determineWinner();                
                 break;
             case 3:
-                console.log("index: " + bestSpot.index);
                 store.dispatch(computerChoosesCell4());
                 this.determineWinner();               
                 break;
             case 4:
-                console.log("index: " + bestSpot.index);
                 store.dispatch(computerChoosesCell5());
                 this.determineWinner();                
                 break;
             case 5:
-                console.log("index: " + bestSpot.index);
                 store.dispatch(computerChoosesCell6());
                 this.determineWinner();                
                 break;
             case 6:
-                console.log("index: " + bestSpot.index);
                 store.dispatch(computerChoosesCell7());
                 this.determineWinner();                
                 break;
             case 7:
-                console.log("index: " + bestSpot.index);
                 store.dispatch(computerChoosesCell8());
                 this.determineWinner();                
                 break;
             case 8:
-                console.log("index: " + bestSpot.index);
                 store.dispatch(computerChoosesCell9());
                 this.determineWinner();                
                 break;
@@ -288,7 +277,6 @@ export class Board extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         board: state.boardReducer.board,
         player: state.choiceReducer.player
