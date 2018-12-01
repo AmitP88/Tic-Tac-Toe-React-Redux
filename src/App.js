@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './media_queries.css';
 import ChoiceQuestion from './components/ChoiceQuestion';
 import ChoiceAnswer from './components/ChoiceAnswer';
 import Winner from './components/Winner';
