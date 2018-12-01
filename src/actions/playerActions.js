@@ -10,9 +10,7 @@ export const PLAYER_CHOOSES_CELL_7 = "PLAYER_CHOOSES_CELL_7";
 export const PLAYER_CHOOSES_CELL_8 = "PLAYER_CHOOSES_CELL_8";
 export const PLAYER_CHOOSES_CELL_9 = "PLAYER_CHOOSES_CELL_9";
 
-/* Action creators for when the player chooses
-a cell to fill */
-
+/* Action creators for when the player chooses a cell to fill */
 export const playerChoosesCell1 = () => {
     return (dispatch, getState) => {
         const currentState = getState();

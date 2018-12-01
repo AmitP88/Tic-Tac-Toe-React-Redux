@@ -10,9 +10,7 @@ export const COMPUTER_CHOOSES_CELL_7 = "computer_CHOOSES_CELL_7";
 export const COMPUTER_CHOOSES_CELL_8 = "computer_CHOOSES_CELL_8";
 export const COMPUTER_CHOOSES_CELL_9 = "computer_CHOOSES_CELL_9";
 
-/* Action creators for when the computer chooses
-a cell to fill */
-
+/* Action creators for when the computer chooses a cell to fill */
 export const computerChoosesCell1 = () => {
     return (dispatch, getState) => {
         const currentState = getState();
