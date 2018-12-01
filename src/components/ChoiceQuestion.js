@@ -25,7 +25,7 @@ class ChoiceQuestion extends Component {
         console.log(store.getState());
         if(store.getState().renderReducer.ChoiceQuestion === false) {
             return null;
-        } else {
+        } else if(store.getState().renderReducer.ChoiceQuestion === true){
             return (
                 <div className="choice-container">
                     <h3 className="choice-question">
