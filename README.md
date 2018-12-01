@@ -25,7 +25,7 @@
 
 
 ## To run locally
-> 1.) Download the repo and extract using WinRar
-> 2.) Open up your terminal and navigate to the repo folder directory
-> 3.) Type `npm start` and wait for page to load
-> 4.) Play!
+1. Download the repo and extract using WinRar
+2. Open up your terminal and navigate to the repo folder directory
+3. Type `npm start` and wait for page to load
+4. Play!
