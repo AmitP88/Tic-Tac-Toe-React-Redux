@@ -4,17 +4,17 @@
 ## Test your strategy skills against a formidable opponent - your PC.
 ## Who will win? Man? Or machine?
 
-![alt text][logo]
+![alt text][ChoiceQuestion]
 
-[logo]: https://github.com/AmitP88/Tic-Tac-Toe-React-Redux/blob/master/ChoiceQuestion.png
+[ChoiceQuestion]: https://github.com/AmitP88/Tic-Tac-Toe-React-Redux/blob/master/ChoiceQuestion.png
 
-![alt text][logo]
+![alt text][Playing]
 
-[logo]: https://github.com/AmitP88/Tic-Tac-Toe-React-Redux/blob/master/Playing.png
+[Playing]: https://github.com/AmitP88/Tic-Tac-Toe-React-Redux/blob/master/Playing.png
 
-![alt text][logo]
+![alt text][Endgame]
 
-[logo]: https://github.com/AmitP88/Tic-Tac-Toe-React-Redux/blob/master/EndState.png
+[Endgame]: https://github.com/AmitP88/Tic-Tac-Toe-React-Redux/blob/master/EndState.png
 
 
 ### This game was built using React, Redux, and a sophisticated algorithm
