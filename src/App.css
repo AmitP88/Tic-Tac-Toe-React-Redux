@@ -1,3 +1,7 @@
+html {
+  background: url(https://factotumofarts.files.wordpress.com/2014/09/qdad_tictactoe_19september.jpg) no-repeat center center fixed;
+}
+
 .App {
   text-align: center;
 }
@@ -34,6 +38,10 @@ h3 {
   font-size: 25px;
 }
 
+.choice-container {
+  background-color: white;
+}
+
 .winner {
   margin-top: 35%;
   text-align: center;
@@ -44,14 +52,12 @@ h3 {
 .choice-question {
   position: relative;
   top: 35%;
-
   -webkit-user-select: none; /* Chrome/Safari */        
--moz-user-select: none; /* Firefox */
--ms-user-select: none; /* IE10+ */
-
-/* Rules below not implemented in browsers yet */
--o-user-select: none;
-user-select: none;
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
 }
 
 .board-container {
@@ -72,6 +78,7 @@ user-select: none;
   height: 100px;
   font-size: 70px;
   border: solid 2px black;
+  background-color: white;
 }
 
 .cell:hover {
