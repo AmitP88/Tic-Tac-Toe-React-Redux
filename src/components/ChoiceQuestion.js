@@ -1,5 +1,6 @@
 import React ,{ Component } from 'react';
 import { choosePlayerX, choosePlayerO } from '../actions/choiceActions';
+import { connect } from 'react-redux';
 import { store, X, O } from '../store/store';
 import { render_choiceAnswerAndBoard } from '../actions/renderActions';
 
@@ -23,9 +24,9 @@ class ChoiceQuestion extends Component {
 
     render() {
         console.log(store.getState());
-        if(store.getState().renderReducer.ChoiceQuestion === false) {
+        if(this.props.ChoiceQuestion === false) {
             return null;
-        } else if(store.getState().renderReducer.ChoiceQuestion === true){
+        } else {
             return (
                 <div className="choice-container">
                     <h3 className="choice-question">
@@ -41,4 +42,12 @@ class ChoiceQuestion extends Component {
     }
 }
 
-export default ChoiceQuestion;
+// export default ChoiceQuestion;
+
+const mapStateToProps = (state) => {
+    return {
+        ChoiceQuestion: state.renderReducer.ChoiceQuestion
+    }
+}
+
+export default connect(mapStateToProps)(ChoiceQuestion);
