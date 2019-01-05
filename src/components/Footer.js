@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import react from '../react.svg';
+import react from '../react.png';
 import redux from '../redux.svg';
 import Tooltip from "react-simple-tooltip";
 
@@ -8,7 +8,7 @@ class Footer extends Component {
       return (
         <footer>
           <div className="builtWith">
-            Built with <Tooltip content="React"><img src={react} className="App-logo" alt="logo" /></Tooltip>+<Tooltip content="Redux"><img src={redux} className="App-logo" alt="logo" /></Tooltip>
+            Built with React <img src={react} className="App-logo" alt="logo" /> and Redux <img src={redux} className="App-logo" alt="logo" />
           </div>
             
             <a href="https://github.com/AmitP88/Tic-Tac-Toe-React-Redux" target="_blank" rel="noopener noreferrer">
