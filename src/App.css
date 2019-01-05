@@ -123,3 +123,7 @@ footer {
   text-decoration-line: none;
   font-weight: bold;
 }
+
+.github-profile-link:hover {
+  color: blue;
+}
