@@ -12,8 +12,12 @@
     }
 
     .builtWith {
-        margin-top: 10%;
-        margin-bottom: 20%;
+        display: flex;
+        align-items: center;
+        width: 293px;
+        margin: 0 auto;
+        margin-top: 0;
+        margin-bottom: 10%;        
     }
 
 }
