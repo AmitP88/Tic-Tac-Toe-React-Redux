@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import react from '../react.png';
 import redux from '../redux.svg';
-import Tooltip from "react-simple-tooltip";
 
 class Footer extends Component {
     render() {
