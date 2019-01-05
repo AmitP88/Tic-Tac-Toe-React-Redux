@@ -1,5 +1,5 @@
 html {
-  background: url(http://www.monoplast.com.tr/media/background.jpg) no-repeat center center fixed;
+  background: url("./background.jpg") no-repeat center center fixed;
 }
 
 .App {
